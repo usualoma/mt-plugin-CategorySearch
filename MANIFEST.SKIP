@@ -1,0 +1,42 @@
+# version control
+\bCVS
+(^|/)\.
+
+# CPAN chain files
+^MANIFEST
+^Makefile
+^META.yml$
+^MYMETA.yml$
+^MYMETA.json$
+^blib/
+
+# Artwork data for description
+^artwork/
+
+# Raw source file
+^src/
+
+# Build tools
+Gruntfile
+package.json
+package-lock.json
+^tools/
+webpack.config.js
+docker-compose.yml
+compose.yml
+Dockerfile
+
+# npm working directory
+^node_modules/
+
+# packages
+\.zip$
+\.tar\.gz$
+
+# Github pages
+^docs/
+
+# source files
+mt-static/plugins/MTMLLinter/typings/
+mt-static/plugins/MTMLLinter/src/
+mt-static/plugins/MTMLLinter/css/

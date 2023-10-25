@@ -1,0 +1,34 @@
+#plugin name
+name: CategorySearch
+version: 1.2.0
+
+#about this plugin
+description: <__trans phrase="A plugin enable to search by category field.">
+author_name: <__trans phrase="toi-planning">
+author_link: http://tec.toi-planning.net/
+plugin_link: http://tec.toi-planning.net/mt/categorysearch/
+doc_link: http://tec.toi-planning.net/mt/categorysearch#manual
+
+#Localization
+l10n_class: CategorySearch::L10N
+
+# hook
+init_app: CategorySearch::App::init_app
+init_request: CategorySearch::App::init_request
+
+#tag
+tags:
+    help_url: http://tec.toi-planning.net/mt/categorysearch/tags#%t
+    block:
+        IfCategorySearch?: CategorySearch::Template::ContextHandlers::_hdlr_if_category_search
+        UnlessCategorySearch?: CategorySearch::Template::ContextHandlers::_hdlr_if_category_search
+
+        CategorySearchLink: CategorySearch::Template::ContextHandlers::_hdlr_category_search_link
+
+        CategorySearchSets: CategorySearch::Template::ContextHandlers::_hdlr_category_search_sets
+        CategorySearchSetsHeader: CategorySearch::Template::ContextHandlers::_hdlr_category_search_sets_header
+        CategorySearchSetsFooter: CategorySearch::Template::ContextHandlers::_hdlr_category_search_sets_footer
+
+        CategorySearchCategories: CategorySearch::Template::ContextHandlers::_hdlr_category_search_categories
+        CategorySearchCategoriesHeader: CategorySearch::Template::ContextHandlers::_hdlr_category_search_categories_header
+        CategorySearchCategoriesFooter: CategorySearch::Template::ContextHandlers::_hdlr_category_search_categories_footer
