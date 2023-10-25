@@ -121,7 +121,7 @@ sub search_terms {
 	my $combination_type =
 		lc($app->param('CategorySearchCombinationType') || 'and');
 
-	my @csets = $app->param('CategorySearchSets');
+	my @csets = $app->multi_param('CategorySearchSets');
 	my @cats0 = ();
 	my $only_single_queies = 1;
 
@@ -135,7 +135,7 @@ sub search_terms {
 			    my $str = $_;
 			    $str =~ s/^\s*(.*?)\s*$/$1/;
 			    $str;
-		    } $app->param($cs)));
+		    } $app->multi_param($cs)));
         } @csets);
 
         my %hash = ();
@@ -155,7 +155,7 @@ sub search_terms {
 			my $str = $_;
 			$str =~ s/^\s*(.*?)\s*$/$1/;
 			$str;
-		} $app->param($cs)));
+		} $app->multi_param($cs)));
 		if (! @queries) {
 			next;
 		}
